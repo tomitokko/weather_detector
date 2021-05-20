@@ -1,0 +1,11 @@
+---
+application:
+  name: "weather-detector"
+  project: "first-project"
+  organization: "QoveryCommunity"
+routers:
+- name: "main-weather-detector"
+  routes:
+  - application_name: "weather-detector"
+    paths:
+    - "/*"
