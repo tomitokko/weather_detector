@@ -8,7 +8,7 @@ COPY weatherdetector /usr/local/weatherdetector
 
 COPY db.sqlite3 /usr/local 
 
-ADD manage.py / templates / weather / weatherdetector / db.sqlite3
+ADD manage.py / templates / weather / weatherdetector / db.sqlite3 /
 
 RUN pip install -r ../requirments.txt
 
