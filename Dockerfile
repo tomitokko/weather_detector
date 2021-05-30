@@ -1,17 +1,9 @@
-FROM python:3
+FROM python:3.8
+ENV PYTHONUNBUFFERED 1
+RUN mkdir -p /app
+WORKDIR /app
+COPY requirements.txt /app/requirements.txt
+RUN pip install -r requirements.txt
+COPY . /app
 
-COPY templates /usr/local/templates
-
-COPY weather /usr/local/weather
-
-COPY weatherdetector /usr/local/weatherdetector
-
-COPY db.sqlite3 /usr/local 
-
-ADD manage.py / templates / weather / weatherdetector / db.sqlite3 /
-
-RUN pip install -r ../requirments.txt
-
-RUN python manage.py runserver
-
-EXPOSE 8080
+CMD python manage.py runserver 0.0.0.0:8000
